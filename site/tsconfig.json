@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "lib": ["ES2020", "dom", "ESNext"],
+      "target": "ES2020",
+      "module": "ES2020",
+      "moduleResolution": "bundler",
+      "experimentalDecorators": true,
+      "useDefineForClassFields": false,
+      "moduleDetection": "force",
+      "rootDir": "."
+    }
+  }
+  

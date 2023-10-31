@@ -10,5 +10,12 @@
 		"3000": {
 			"label": "App"
 		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode"
+			]
+		}
 	}
 }

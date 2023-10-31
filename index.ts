@@ -1,15 +1,10 @@
-import { join, resolve } from 'path'
+import { watch } from 'fs'
+import { build } from './server/build'
+import { serve } from './server/serve'
 
-Bun.serve({
-    port: 3000,
-    fetch(request) {
-        const { pathname } = new URL(request.url)
-        const resolvePath = pathname.replace(/\/$/, '/index.html')
-        const filepath = resolve(join('./site', `.${resolvePath}`))
-        const file = Bun.file(filepath)
-        if (!file.size) {
-            return new Response('Not Found', { headers: { 'Content-type': 'text/plain' } })
-        }
-        return new Response(Bun.file(filepath))
-    },
+const server = serve(await build())
+
+watch('./site', { recursive: true }, async (event, filename) => {
+    console.log(event, filename)
+    server.reload(await build())
 })

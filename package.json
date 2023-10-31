@@ -2,6 +2,9 @@
   "name": "buncodespace",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "serve": "bun run --watch index.ts"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
