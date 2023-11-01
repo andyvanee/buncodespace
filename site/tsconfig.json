@@ -1,13 +1,17 @@
 {
-    "compilerOptions": {
-      "lib": ["ES2020", "dom", "ESNext"],
-      "target": "ES2020",
-      "module": "ES2020",
-      "moduleResolution": "bundler",
-      "experimentalDecorators": true,
-      "useDefineForClassFields": false,
-      "moduleDetection": "force",
-      "rootDir": "."
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "moduleDetection": "force",
+    "rootDir": ".",
+    "paths": {
+      "thimble": ["../lib/thimble"],
+      "thimble/*": ["../lib/thimble/*"]
     }
   }
-  
+}

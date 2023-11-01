@@ -3,7 +3,8 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "serve": "bun run --watch index.ts"
+    "serve": "bun run --watch index.ts",
+    "lint": "prettier -w '**/*.{html,ts,css,json}'"
   },
   "devDependencies": {
     "@types/page": "^1.11.8",
