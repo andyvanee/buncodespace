@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "moduleDetection": "force",
+    "rootDir": ".",
+    "paths": {
+      "thimble": ["./thimble"],
+      "thimble/*": ["./thimble/*"]
+    },
+    "types": ["bun-types"]
+  }
+}
