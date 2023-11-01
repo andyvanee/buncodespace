@@ -6,9 +6,17 @@
     "serve": "bun run --watch index.ts"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@types/page": "^1.11.8",
+    "bun-types": "latest",
+    "glob": "^10.3.10",
+    "jimp": "^0.22.10",
+    "prettier": "^3.0.3"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "lit": "^3.0.1",
+    "page": "^1.11.6"
   }
 }
