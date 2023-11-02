@@ -29,10 +29,11 @@ const serve = (dist: BuildOutput) => {
         if (output) return new Response(output)
     }
 
-    const serveStatic = (request: Request) => {
+    const serveStatic = (root: string, request: Request) => {
         const { pathname } = new URL(request.url)
         const resolvePath = pathname.replace(/\/$/, '/index.html')
-        const siteFilepath = resolve(join('./site', `.${resolvePath}`))
+        const siteFilepath = resolve(join(root, `${resolvePath}`))
+        console.log({ siteFilepath })
         const file = Bun.file(siteFilepath)
         if (file.size) {
             return new Response(Bun.file(siteFilepath))
@@ -42,7 +43,7 @@ const serve = (dist: BuildOutput) => {
     const serveConfig = {
         port,
         fetch(request) {
-            const response = serveBuild(request) || serveStatic(request)
+            const response = serveStatic('./site', request) || serveStatic('./.dist', request) || serveBuild(request)
             if (response) return response
 
             return new Response('Not Found', { headers: { 'Content-type': 'text/plain' } })

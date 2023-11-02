@@ -10,8 +10,8 @@
     "moduleDetection": "force",
     "rootDir": ".",
     "paths": {
-      "thimble": ["../lib/thimble"],
-      "thimble/*": ["../lib/thimble/*"]
+      "thimble": ["./lib/thimble"],
+      "thimble/*": ["./lib/thimble/*"]
     }
   }
 }
