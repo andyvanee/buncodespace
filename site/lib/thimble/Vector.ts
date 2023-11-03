@@ -25,8 +25,28 @@ export class Vector {
         }
     }
 
+    get xy() {
+        return [this.x, this.y] as [number, number]
+    }
+
+    round() {
+        return new Vector(Math.round(this.x), Math.round(this.y))
+    }
+
+    constrain(other: Vector) {
+        return new Vector(Math.min(other.x, Math.max(this.x, 0)), Math.min(other.y, Math.max(this.y, 0)))
+    }
+
+    invert() {
+        return new Vector(0 - this.x, 0 - this.y)
+    }
+
     add(other: Vector) {
         return new Vector(this.x + other.x, this.y + other.y)
+    }
+
+    mult(other: Vector) {
+        return new Vector(this.x * other.x, this.y * other.y)
     }
 
     subtract(other: Vector) {

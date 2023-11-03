@@ -64,6 +64,12 @@ export class Canvas extends Node {
     }
 
     render() {
-        return html`<canvas id="screen"></canvas>`
+        return html`
+            <div>
+                <slot name="before"></slot>
+                <canvas id="screen"></canvas>
+                <slot name="after"></slot>
+            </div>
+        `
     }
 }

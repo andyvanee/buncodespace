@@ -1,5 +1,3 @@
-// import { html } from './lit'
-
 import { Config } from './Config'
 import { TickSpec, Tickable, tickable } from './Tick'
 import { LitElement, html, property } from './lit'
