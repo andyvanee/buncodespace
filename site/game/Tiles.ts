@@ -7,33 +7,32 @@ const image = new Image()
 image.src = terrain
 
 // Tile source size
-const sz = new Vector(32, 32)
+const sourceSize = new Vector(32, 32)
 // Tile dest size
-const dz = new Vector(64, 64)
+const destSize = new Vector(64, 64)
 
 export class Tiles extends Drawable {
-    draw(canvas: HTMLCanvasElement, context: CanvasRenderingContext2D) {
-        const { width, height } = canvas
+    draw(_: HTMLCanvasElement, context: CanvasRenderingContext2D) {
         const rows = [...Array(3).keys()]
         const cols = [...Array(3).keys()]
         const destOffset = new Vector(64 * 11, 128)
 
         rows.map((row) => {
             cols.map((col) => {
-                const srcOffset = new Vector(32, 32)
-                const pos = new Vector(col, row)
-                const s = sz.mult(pos)
+                const sourceOffset = new Vector(32, 32)
+                const tileId = new Vector(col, row)
+                const s = sourceSize.mult(tileId)
                 const d = s.mult(new Vector(2, 2))
                 context.drawImage(
                     image,
-                    s.x + srcOffset.x,
-                    s.y + srcOffset.y,
-                    sz.x,
-                    sz.y,
+                    s.x + sourceOffset.x,
+                    s.y + sourceOffset.y,
+                    sourceSize.x,
+                    sourceSize.y,
                     d.x + destOffset.x,
                     d.y + destOffset.y,
-                    dz.x,
-                    dz.y
+                    destSize.x,
+                    destSize.y
                 )
             })
         })

@@ -1,8 +1,10 @@
+const tileToBool = (c: string) => c === 'x'
+
+const rowToBoolArray = (row: string) => row.split('').map(tileToBool)
+
 const tiles = (input: string) => {
-    const cToBool = (c: string) => c === 'x'
-    const rowToBools = (row: string) => row.split('').map(cToBool)
     const lines = input.trim().split('\n')
-    return lines.map(rowToBools)
+    return lines.map(rowToBoolArray)
 }
 
 export const collision = tiles(`

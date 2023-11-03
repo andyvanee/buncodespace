@@ -48,9 +48,7 @@ export class MoveHint extends Node {
         `
     }
     firstUpdated() {
-        window.addEventListener('interaction', () => {
-            this.classList.add('hidden')
-        })
+        window.addEventListener('interaction', () => this.classList.add('hidden'))
     }
     render() {
         return html`

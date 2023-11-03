@@ -18,9 +18,7 @@ export class Ground extends Drawable {
         for (const row of this.collision) {
             pos.x = 0
             for (const col of row) {
-                if (col) {
-                    context.fillRect(pos.x, pos.y, width, height)
-                }
+                if (col) context.fillRect(pos.x, pos.y, width, height)
                 pos.x += width
             }
             pos.y += height
